@@ -1,0 +1,226 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/leny/grunt-todo">grunt-todo (v0.5.0)</a>
+</h1>
+<h4>Find TODO, FIXME and NOTE inside project files</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.grunt-todo">module grunt-todo</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.grunt-todo.grunt-todo">
+            function <span class="apidocSignatureSpan"></span>grunt-todo
+            <span class="apidocSignatureSpan">(grunt)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.grunt-todo.toString">
+            function <span class="apidocSignatureSpan">grunt-todo.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.grunt-todo" id="apidoc.module.grunt-todo">module grunt-todo</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.grunt-todo.grunt-todo" id="apidoc.element.grunt-todo.grunt-todo">
+        function <span class="apidocSignatureSpan"></span>grunt-todo
+        <span class="apidocSignatureSpan">(grunt)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">grunt-todo = function (grunt) {
+
+  // Project configuration.
+  grunt.initConfig({
+    coffee: {
+      options: {
+        bare: true
+      },
+      task: {
+        files: {
+          "tasks/todo.js": "src/todo.coffee"
+        }
+      }
+    },
+
+    jshint: {
+      all: [
+        'Gruntfile.js',
+        'tasks/*.js',
+      ],
+      options: {
+        jshintrc: '.jshintrc',
+      }
+    },
+
+    // Configuration to be run.
+    todo: {
+      default_options: {
+        options: {},
+        src: [
+          'test/*'
+        ]
+      },
+      custom_options: {
+        options: {
+          marks: [
+            {
+              pattern: "BURP",
+              color: "pink"
+            },
+            {
+              name: "TODO",
+              pattern: /TODO/,
+              color: "yellow"
+            }
+          ],
+          file: "report.md",
+          githubBoxes: true,
+          colophon: true,
+          usePackage: true
+        },
+        src: [
+          'test/*'
+        ],
+      },
+      custom_options_no_logging: {
+        options: {
+          marks: [
+            {
+              pattern: "BURP",
+              color: "pink"
+            },
+            {
+              name: "TODO",
+              pattern: /TODO/,
+              color: "yellow"
+            }
+          ],
+          file: "report-2.md",
+          githubBoxes: true,
+          colophon: true,
+          usePackage: true,
+          logOutput: false
+        },
+        src: [
+          'test/*'
+        ],
+      },
+    },
+
+  });
+
+  // Actually load this plugin's task(s).
+  grunt.loadTasks('tasks');
+
+  // These plugins provide necessary tasks.
+  grunt.loadNpmTasks('grunt-contrib-coffee');
+  grunt.loadNpmTasks('grunt-contrib-jshint');
+
+  // By default, lint and run todo.
+  grunt.registerTask('default', ['coffee', 'jshint', 'todo']);
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.grunt-todo.toString" id="apidoc.element.grunt-todo.toString">
+        function <span class="apidocSignatureSpan">grunt-todo.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+    return text;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+aMarks = (function() {
+  var i, len, ref, results;
+  ref = oOptions.marks;
+  results = [];
+  for (i = 0, len = ref.length; i &lt; len; i++) {
+    oMark = ref[i];
+    results.push({
+      name: oMark.name || oMark.pattern.<span class="apidocCodeKeywordSpan">toString</span>(),
+      color: aAllowedColors.indexOf(oMark.color.toLowerCase()) === -1 ? "cyan" : oMark.color.toLowerCase(),
+      regex: oMark.pattern instanceof RegExp ? oMark.pattern : new RegExp(oMark.pattern)
+    });
+  }
+  return results;
+})();
+this.filesSrc.filter(function(sFilePath) {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
