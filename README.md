@@ -1,4 +1,7 @@
-# api documentation for  [grunt-todo (v0.5.0)](https://github.com/leny/grunt-todo)  [![npm package](https://img.shields.io/npm/v/npmdoc-grunt-todo.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-grunt-todo) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-grunt-todo.svg)](https://travis-ci.org/npmdoc/node-npmdoc-grunt-todo)
+# npmdoc-grunt-todo
+
+#### basic api documentation for  [grunt-todo (v0.5.0)](https://github.com/leny/grunt-todo)  [![npm package](https://img.shields.io/npm/v/npmdoc-grunt-todo.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-grunt-todo) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-grunt-todo.svg)](https://travis-ci.org/npmdoc/node-npmdoc-grunt-todo)
+
 #### Find TODO, FIXME and NOTE inside project files
 
 [![NPM](https://nodei.co/npm/grunt-todo.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/grunt-todo)
@@ -96,7 +99,8 @@
         "url": "git://github.com/leny/grunt-todo.git"
     },
     "scripts": {},
-    "version": "0.5.0"
+    "version": "0.5.0",
+    "bin": {}
 }
 ```
 
