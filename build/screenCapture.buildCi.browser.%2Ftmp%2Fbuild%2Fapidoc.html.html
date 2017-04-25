@@ -63,15 +63,6 @@
 
         </li>
 
-        <li>
-
-            <a class="apidocElementLiA" href="#apidoc.element.grunt-todo.toString">
-            function <span class="apidocSignatureSpan">grunt-todo.</span>toString
-            <span class="apidocSignatureSpan">()</span>
-            </a>
-
-        </li>
-
     </ol></li>
 
 </ol></div>
@@ -181,37 +172,6 @@
 
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
-    </ul>
-
-
-
-    <h2>
-        <a href="#apidoc.element.grunt-todo.toString" id="apidoc.element.grunt-todo.toString">
-        function <span class="apidocSignatureSpan">grunt-todo.</span>toString
-        <span class="apidocSignatureSpan">()</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">toString = function () {
-    return text;
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-aMarks = (function() {
-  var i, len, ref, results;
-  ref = oOptions.marks;
-  results = [];
-  for (i = 0, len = ref.length; i &lt; len; i++) {
-    oMark = ref[i];
-    results.push({
-      name: oMark.name || oMark.pattern.<span class="apidocCodeKeywordSpan">toString</span>(),
-      color: aAllowedColors.indexOf(oMark.color.toLowerCase()) === -1 ? "cyan" : oMark.color.toLowerCase(),
-      regex: oMark.pattern instanceof RegExp ? oMark.pattern : new RegExp(oMark.pattern)
-    });
-  }
-  return results;
-})();
-this.filesSrc.filter(function(sFilePath) {
-...</pre></li>
     </ul>
 
 
